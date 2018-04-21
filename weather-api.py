@@ -53,12 +53,12 @@ def getWeather():
    #webhook_url = 'https://hooks.slack.com/services/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'
 
    slack_data = {
-
-                   'channel': '#pdtest',
-                   'username': 'philBot',
-                   'text': printme,
-                   'icon_emoji': ':waffle-fry:'
-                }
+       
+        'channel': '#pdtest',
+        'username': 'philBot',
+        'text': printme,
+        'icon_emoji': ':waffle-fry:'
+    }
 
    response = requests.post(
        webhook_url, data=json.dumps(slack_data),
