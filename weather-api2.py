@@ -5,7 +5,7 @@ import json
 import threading
 
 
-def printit():
+def getWeather():
 
    # hardcoded api address
 
@@ -24,28 +24,28 @@ def printit():
 
    #Emoji dictionary
 
-   list1 = {
-                “Mostly Cloudy': “:cloud:“,
-                “Sunny': “:sunny:' ,
-                “Cloudy': “:cloud:“,
-                “Mostly Sunny': “:mostly_sunny:“,
-                “Partly Cloudy': “:partly_sunny:“,
-                “Breezy': “:wind_blowing_face:“,
-                “Heavy Rain': “:rain_cloud:“,
-                “Rain': “:rain_cloud:'
+   emojiList = {
+                'Mostly Cloudy': ':cloud:',
+                'Sunny': ':sunny:' ,
+                'Cloudy': ':cloud:',
+                'Mostly Sunny': ':mostly_sunny:',
+                'Partly Cloudy': ':partly_sunny:',
+                'Breezy': ':wind_blowing_face:',
+                'Heavy Rain': ':rain_cloud:',
+                'Rain': ':rain_cloud:'
             }
 
 
-   emoji = “'
+   emoji = ''
 
-   for k, v in list1.iteritems():
+   for k, v in emojiList.items():
        if k == description:
            emoji = v
 
 
    # print statement
 
-   printme = “The temperature is ' + temperature + ' degrees F and ' + description + emoji + ' in Atlanta.' + “\n The high today is ' + forecast + “.'
+   printme = 'The temperature is ' + temperature + ' degrees F and ' + description + emoji + ' in Atlanta.' + '\n The high today is ' + forecast + '.'
 
    #Slack webhook integration
 
@@ -72,4 +72,4 @@ def printit():
            'Request to slack returned an error %s, the response is:\n%s' % (response.status_code, response.text)
        )
 
-printit()
+getWeather()
