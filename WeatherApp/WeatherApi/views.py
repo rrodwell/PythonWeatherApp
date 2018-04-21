@@ -48,4 +48,6 @@ def index(request):
         'forecast': weatherUpdate
     }
 
+    print(weatherForecast)
+    
     return render(request,'WeatherApi/index.html',context=weatherForecast)
