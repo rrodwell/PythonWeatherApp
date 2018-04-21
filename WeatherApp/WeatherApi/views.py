@@ -8,21 +8,6 @@ import threading
 # Create your views here.
 def index(request):
 
-    # appoint_list = Appointment.objects.filter(
-    #         description__icontains = "D"
-    #     )
-    # appt_dict = {
-    #     'appointment_records': appoint_list,
-    # }
-
-    return render(request,'WeatherApi/index.html')
-
-
-### API function ####
-def getWeather(request):
-
-    # hardcoded api address
-
     api_address = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Atlanta%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
 
     #JSON
@@ -56,9 +41,11 @@ def getWeather(request):
         if k == description:
             emoji = v
 
-
+    weatherUpdate = 'The temperature is ' + temperature + ' degrees F and ' + description + emoji + ' in Atlanta.' + '\n The high today is ' + forecast + '.'
     # print statement
 
-    printme = 'The temperature is ' + temperature + ' degrees F and ' + description + emoji + ' in Atlanta.' + '\n The high today is ' + forecast + '.'
+    weatherForecast = {
+        'forecast': weatherUpdate
+    }
 
-    return printme
+    return render(request,'WeatherApi/index.html',context=weatherForecast)
