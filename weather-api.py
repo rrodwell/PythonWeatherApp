@@ -48,7 +48,7 @@ def getWeather():
     elif description == 'Breezy':
         printme = 'The temp is ' + weather + ' degrees F and ' + description + ' :wind_blowing_face: ' + ' in Atlanta. The high today is ' + forecast + '.'
 
-    else: 
+    else:
         printme = "Description not available at this time."
 
 
