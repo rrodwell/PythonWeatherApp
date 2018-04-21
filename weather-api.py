@@ -25,15 +25,15 @@ def getWeather():
    #Emoji dictionary
 
    emojiList = {
-                'Mostly Cloudy': ':cloud:',
-                'Sunny': ':sunny:' ,
-                'Cloudy': ':cloud:',
-                'Mostly Sunny': ':mostly_sunny:',
-                'Partly Cloudy': ':partly_sunny:',
-                'Breezy': ':wind_blowing_face:',
-                'Heavy Rain': ':rain_cloud:',
-                'Rain': ':rain_cloud:'
-            }
+        'Mostly Cloudy': ':cloud:',
+        'Sunny': ':sunny:' ,
+        'Cloudy': ':cloud:',
+        'Mostly Sunny': ':mostly_sunny:',
+        'Partly Cloudy': ':partly_sunny:',
+        'Breezy': ':wind_blowing_face:',
+        'Heavy Rain': ':rain_cloud:',
+        'Rain': ':rain_cloud:'
+    }
 
 
    emoji = ''
