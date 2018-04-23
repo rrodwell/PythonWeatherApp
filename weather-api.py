@@ -21,8 +21,8 @@ def getWeather():
     highTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['high']
     descriptionTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['text']
 
-    print(forecastTomorrow)
-    print(description)
+   # print(forecastTomorrow)
+    print(descriptionToday)
 
     # Emoji dictionary
 
@@ -40,7 +40,7 @@ def getWeather():
     emoji = ''
 
     for k, v in emojiList.items():
-        if k == description:
+        if k == descriptionToday:
             emoji = v
 
     # print statement
@@ -52,25 +52,25 @@ def getWeather():
     webhook_url = 'https://hooks.slack.com/services/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'
     # webhook_url = 'https://hooks.slack.com/services/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'
 
-    slack_data = {
-
-        'channel': '#pdtest',
-        'username': 'philBot',
-        'text': printme,
-
-    }
-
-    response = requests.post(
-        webhook_url, data=json.dumps(slack_data),
-        headers={
-            'Content-Type': 'application/json'
-        }
-    )
-
-    if response.status_code != 200:
-        raise ValueError(
-            'Request to slack returned an error %s, the response is:\n%s' % (response.status_code, response.text)
-        )
+    # slack_data = {
+    #
+    #     'channel': '#pdtest',
+    #     'username': 'philBot',
+    #     'text': printme,
+    #
+    # }
+    #
+    # response = requests.post(
+    #     webhook_url, data=json.dumps(slack_data),
+    #     headers={
+    #         'Content-Type': 'application/json'
+    #     }
+    # )
+    #
+    # if response.status_code != 200:
+    #     raise ValueError(
+    #         'Request to slack returned an error %s, the response is:\n%s' % (response.status_code, response.text)
+    #     )
 
 
 getWeather()
