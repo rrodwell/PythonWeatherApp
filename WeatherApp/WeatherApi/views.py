@@ -10,22 +10,25 @@ def index(request):
 
     api_address = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Atlanta%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
 
-    #JSON
+    # JSON
 
     json_data = requests.get(api_address).json()
 
-    temperature = json_data['query']['results']['channel']['item']['condition']['temp']
-    description = json_data['query']['results']['channel']['item']['condition']['text']
+    temperatureNow = json_data['query']['results']['channel']['item']['condition']['temp']
+    descriptionToday = json_data['query']['results']['channel']['item']['condition']['text']
     date = json_data['query']['results']['channel']['item']['condition']['date']
-    forecast = json_data['query']['results']['channel']['item']['forecast'][0]['high']
+    highToday = json_data['query']['results']['channel']['item']['forecast'][0]['high']
+    highTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['high']
+    descriptionTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['text']
 
-    print(description)
+   # print(forecastTomorrow)
+    print(descriptionToday)
 
-    #Emoji dictionary
+    # Emoji dictionary
 
     emojiList = {
         'Mostly Cloudy': ':cloud:',
-        'Sunny': ':sunny:' ,
+        'Sunny': ':sunny:',
         'Cloudy': ':cloud:',
         'Mostly Sunny': ':mostly_sunny:',
         'Partly Cloudy': ':partly_sunny:',
@@ -34,15 +37,16 @@ def index(request):
         'Rain': ':rain_cloud:'
     }
 
-
     emoji = ''
 
     for k, v in emojiList.items():
-        if k == description:
+        if k == descriptionToday:
             emoji = v
 
-    weatherUpdate = 'The temperature is ' + temperature + ' degrees F and ' + description + emoji + ' in Atlanta.' + '\n The high today is ' + forecast + '.'
     # print statement
+
+    weatherUpdate = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + emoji + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
+
 
     weatherForecast = {
         'forecast': weatherUpdate
