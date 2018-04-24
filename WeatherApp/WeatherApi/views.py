@@ -34,7 +34,8 @@ def index(request):
         'Partly Cloudy': 'natureback.jpg',
         'Breezy': 'rain.jpg',
         'Heavy Rain': 'rain.jpg',
-        'Rain': 'rain.jpg'
+        'Rain': 'rain.jpg',
+        'Showers': 'rain.jpg',
     }
 
     backgroundImg = ''
