@@ -26,32 +26,34 @@ def index(request):
 
     # Emoji dictionary
 
-    emojiList = {
-        'Mostly Cloudy': ':cloud:',
-        'Sunny': ':sunny:',
-        'Cloudy': ':cloud:',
-        'Mostly Sunny': ':mostly_sunny:',
-        'Partly Cloudy': ':partly_sunny:',
-        'Breezy': ':wind_blowing_face:',
-        'Heavy Rain': ':rain_cloud:',
-        'Rain': ':rain_cloud:'
+    backgroundList = {
+        'Mostly Cloudy': 'natureback.jpg',
+        'Sunny': 'natureback.jpg',
+        'Cloudy': 'natureback.jpg',
+        'Mostly Sunny': 'natureback.jpg',
+        'Partly Cloudy': 'natureback.jpg',
+        'Breezy': 'rain.jpg',
+        'Heavy Rain': 'rain.jpg',
+        'Rain': 'rain.jpg'
     }
 
-    emoji = ''
+    backgroundImg = ''
 
-    for k, v in emojiList.items():
+    for k, v in backgroundList.items():
         if k == descriptionToday:
-            emoji = v
+            backgroundImg = v
 
     # print statement
 
-    weatherUpdate = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + emoji + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
+    weatherUpdate = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + backgroundImg + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
 
 
     weatherForecast = {
-        'forecast': weatherUpdate
+        'forecast': weatherUpdate,
+        'temperature': temperatureNow,
+        'background': backgroundImg,
     }
 
     print(weatherForecast)
-    
+
     return render(request,'WeatherApi/index.html',context=weatherForecast)

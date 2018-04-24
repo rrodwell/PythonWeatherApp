@@ -9,6 +9,8 @@
     <title>Python Wetaher App</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
 
@@ -21,15 +23,36 @@
     <div class='container'>
         <div class='row'>
             <div class='col s12 m6 offset-m3'>
-                <div class='card'> 
+                <div class='card' style='background-image: url(../static/img/{{background}} )'>
+                    <div class='layer'></div>
                     <div class='card-content'>
+                        <div class="search-wrapper">
+                            <input id="search" placeholder="Enter City"><i class="material-icons">search</i>
+                            <div class="search-results"></div>
+                        </div>
+                        <div class='metrics'>
+                            <span>
+                                <a class='celsius'>˚C</a> / <a class='fahrenheit'>˚F</a>
+                            </span>
+                        </div>
+
+                        <div class='row'>
+                            <div class='col s8'>
+                                <p class='temp'>
+                                    {{ temperature }}
+                                </p>
+                            </div>
+                            <div class='col s4'>
+                                <p class='degrees'>˚</p>
+                            </div>
+                        </div>
                         <span class="card-title">Hello, World!</span>
                         <p>{{ forecast }}</p>
                     </div>
                 </div>
-            </div> 
+            </div>
         </div>
-    </div> 
+    </div>
 
     <!-- JavaScript -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
