@@ -4,25 +4,35 @@ import requests
 import json
 import threading
 
+city = raw_input("Enter city: ")
+
 
 def getWeather():
     # hardcoded api address
 
-    api_address = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Atlanta%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
+    api_address = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + city + "%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
 
     # JSON
 
     json_data = requests.get(api_address).json()
 
-    temperatureNow = json_data['query']['results']['channel']['item']['condition']['temp']
+    global temperatureNow
+    temperatureNow = int(json_data['query']['results']['channel']['item']['condition']['temp'])
+
+
     descriptionToday = json_data['query']['results']['channel']['item']['condition']['text']
-    date = json_data['query']['results']['channel']['item']['condition']['date']
-    highToday = json_data['query']['results']['channel']['item']['forecast'][0]['high']
-    highTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['high']
+
+
+    global highToday
+    highToday = int(json_data['query']['results']['channel']['item']['forecast'][0]['high'])
+
+    global highTomorrow
+    highTomorrow = int (json_data['query']['results']['channel']['item']['forecast'][1]['high'])
+
     descriptionTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['text']
 
+
    # print(forecastTomorrow)
-    print(descriptionToday)
 
     # Emoji dictionary
 
@@ -45,11 +55,30 @@ def getWeather():
 
     # print statement
 
-    printme = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + emoji + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
+   # printme = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + emoji + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
 
-    # Slack webhook integration
+    print("In " + city + " it is " + str(temperatureNow))
 
-    webhook_url = 'https://hooks.slack.com/services/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'
+
+
+def convertToCelciusToday():
+
+    global temperatureNow
+    print (temperatureNow - 32) * 5 / 9
+
+
+def convertToCelciusTomorrow():
+
+    global highTomorrow
+    print (highTomorrow - 32) * 5 / 9
+
+
+
+
+
+# Slack webhook integration
+
+#webhook_url = 'https://hooks.slack.com/services/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'
     # webhook_url = 'https://hooks.slack.com/services/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'
 
     # slack_data = {
@@ -73,4 +102,9 @@ def getWeather():
     #     )
 
 
+
+
+
 getWeather()
+convertToCelciusToday()
+convertToCelciusTomorrow()
