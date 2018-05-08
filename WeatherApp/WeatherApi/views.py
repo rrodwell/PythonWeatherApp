@@ -46,6 +46,7 @@ def index(request):
     backgroundList.setdefault('Cloudy', []).append('CRg.gif')
     backgroundList.setdefault('Cloudy', []).append('cloudy2.jpg')
 
+
     backgroundImg = ''
 
 
