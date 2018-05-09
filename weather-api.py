@@ -47,18 +47,8 @@ def getWeather():
         'Rain': ':rain_cloud:'
     }
 
-    emoji = ''
-
-    for k, v in emojiList.items():
-        if k == descriptionToday:
-            emoji = v
 
     # print statement
-
-   # printme = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + emoji + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
-
-    print("In " + city + " it is " + str(temperatureNow))
-
 
 
 def convertToCelciusToday():

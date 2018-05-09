@@ -4,6 +4,8 @@ from threading import Timer
 import requests
 import json
 import threading
+import random
+import array
 
 # Create your views here.
 def index(request):
@@ -26,27 +28,36 @@ def index(request):
 
     # Emoji dictionary
 
-    backgroundList = {
-        'Mostly Cloudy': 'natureback.jpg',
-        'Sunny': 'natureback.jpg',
-        'Cloudy': 'natureback.jpg',
-        'Mostly Sunny': 'natureback.jpg',
-        'Partly Cloudy': 'natureback.jpg',
-        'Breezy': 'rain.jpg',
-        'Heavy Rain': 'rain.jpg',
-        'Rain': 'rain.jpg',
-        'Showers': 'rain.jpg',
-    }
+    backgroundList = {}
+
+    backgroundList.setdefault('Mostly Sunny', []).append('clearsky.jpg')
+    backgroundList.setdefault('Mostly Sunny', []).append('lightning.gif')
+    backgroundList.setdefault('Partly Cloudy', []).append('rain2.gif')
+    backgroundList.setdefault('Partly Cloudy', []).append('CRg.gif')
+    backgroundList.setdefault('Mostly Cloudy', []).append('natureback.jpg')
+    backgroundList.setdefault('Mostly Cloudy', []).append('rain.jpg')
+    backgroundList.setdefault('Sunny', []).append('sunny1.gif')
+    backgroundList.setdefault('Sunny', []).append('lightning.gif')
+    backgroundList.setdefault('Breezy', []).append('windy.jpg')
+    backgroundList.setdefault('Heavy Rain', []).append('heavyrain.jpg')
+    backgroundList.setdefault('Heavy Rain', []).append('rain.jpg')
+    backgroundList.setdefault('Rain', []).append('rainy1.jpg')
+    backgroundList.setdefault('Rain', []).append('rain.jpg')
+    backgroundList.setdefault('Cloudy', []).append('CRg.gif')
+    backgroundList.setdefault('Cloudy', []).append('cloudy2.jpg')
+
 
     backgroundImg = ''
 
+
     for k, v in backgroundList.items():
         if k == descriptionToday:
-            backgroundImg = v
+            backgroundImg = random.choice(v)
+
 
     # print statement
 
-    weatherUpdate = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + backgroundImg + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
+    weatherUpdate = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
 
 
     weatherForecast = {
