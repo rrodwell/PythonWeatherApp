@@ -6,6 +6,11 @@ import json
 import threading
 import random
 import array
+import datetime
+from django.utils import timezone
+
+
+
 
 # Create your views here.
 def index(request):
@@ -23,28 +28,79 @@ def index(request):
     highTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['high']
     descriptionTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['text']
 
+    sunrise = json_data['query']['results']['channel']['astronomy']['sunrise']
+    sunset = json_data['query']['results']['channel']['astronomy']['sunset']
+
+    new_sunrise = sunrise.replace("am", "")
+    new_sunset = sunset.replace("pm", "")
+
+
    # print(forecastTomorrow)
     print(descriptionToday)
 
     # Emoji dictionary
 
+    now = datetime.datetime.now().time()
+    morning_begin = now.replace(hour=6, minute=0, second=0, microsecond=0)
+    evening_begin = now.replace(hour=16, minute=21, second=0, microsecond=0)
+    night_begin = now.replace(hour=20, minute=0, second=0, microsecond=0)
+
     backgroundList = {}
 
-    backgroundList.setdefault('Mostly Sunny', []).append('clearsky.jpg')
-    backgroundList.setdefault('Mostly Sunny', []).append('lightning.gif')
-    backgroundList.setdefault('Partly Cloudy', []).append('rain2.gif')
-    backgroundList.setdefault('Partly Cloudy', []).append('CRg.gif')
-    backgroundList.setdefault('Mostly Cloudy', []).append('natureback.jpg')
-    backgroundList.setdefault('Mostly Cloudy', []).append('rain.jpg')
-    backgroundList.setdefault('Sunny', []).append('sunny1.gif')
-    backgroundList.setdefault('Sunny', []).append('lightning.gif')
-    backgroundList.setdefault('Breezy', []).append('windy.jpg')
-    backgroundList.setdefault('Heavy Rain', []).append('heavyrain.jpg')
-    backgroundList.setdefault('Heavy Rain', []).append('rain.jpg')
-    backgroundList.setdefault('Rain', []).append('rainy1.jpg')
-    backgroundList.setdefault('Rain', []).append('rain.jpg')
-    backgroundList.setdefault('Cloudy', []).append('CRg.gif')
-    backgroundList.setdefault('Cloudy', []).append('cloudy2.jpg')
+
+    if now > morning_begin and now < evening_begin:
+
+        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or'Sunny' or ' Mostly Sunny':
+            backgroundList.setdefault('Partly Cloudy', []).append('clearsky.jpg')
+            backgroundList.setdefault('Partly Cloudy', []).append('CRg.gif')
+            backgroundList.setdefault('Partly Cloudy', []).append('sunnymorning.gif')
+            backgroundList.setdefault('Partly Cloudy', []).append('natureback.jpg')
+            backgroundList.setdefault('Cloudy', []).append('clearsky.jpg')
+            backgroundList.setdefault('Cloudy', []).append('CRg.gif')
+            backgroundList.setdefault('Cloudy', []).append('sunnymorning.gif')
+            backgroundList.setdefault('Cloudy', []).append('natureback.jpg')
+            backgroundList.setdefault('Mostly Cloudy', ['CRg.gif']).append('clearsky.jpg')
+            backgroundList.setdefault('Mostly Cloudy', []).append('CRg.gif')
+            backgroundList.setdefault('Mostly Cloudy', []).append('sunnymorning.gif')
+            backgroundList.setdefault('Mostly Cloudy', []).append('natureback.jpg')
+            backgroundList.setdefault('Sunny', ['CRg.gif']).append('clearsky.jpg')
+            backgroundList.setdefault('Sunny', []).append('CRg.gif')
+            backgroundList.setdefault('Sunny', []).append('sunnymorning.gif')
+            backgroundList.setdefault('Sunny', []).append('natureback.jpg')
+            backgroundList.setdefault('Sunny', ['CRg.gif']).append('clearsky.jpg')
+            backgroundList.setdefault('Sunny', []).append('CRg.gif')
+            backgroundList.setdefault('Mostly Sunny', []).append('sunnymorning.gif')
+            backgroundList.setdefault('Mostly Sunny', []).append('natureback.jpg')
+
+
+
+
+
+    elif now > evening_begin and now < night_begin:
+        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny' or 'Most Sunny':
+            backgroundList.setdefault('Sunny', []).append('rainy.gif')
+            backgroundList.setdefault('Sunny', []).append('rain2.gif')
+            backgroundList.setdefault('Sunny', []).append('rainy2.gif')
+            backgroundList.setdefault('Mostly Sunny', []).append('rain2.gif')
+            backgroundList.setdefault('Mostly Sunny', []).append('rainy2.gif')
+            backgroundList.setdefault('Mostly Sunny', []).append('rainy.gif')
+
+    elif now > night_begin and now < morning_begin:
+        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny':
+            backgroundList.setdefault('Partly Cloudy', []).append('nightclear.gif')
+            backgroundList.setdefault('Partly Cloudy', []).append('nightclear2.gif')
+            backgroundList.setdefault('Cloudy', []).append('nightclear.gif')
+            backgroundList.setdefault('Cloudy', []).append('nightclear2.gif')
+            backgroundList.setdefault('Mostly Cloudy', []).append('nightclear.gif')
+            backgroundList.setdefault('Mostly Cloudy', []).append('nightclear2.gif')
+            backgroundList.setdefault('Sunny', []).append('clearevening.gif')
+            backgroundList.setdefault('Sunny', []).append('cloudy.gif')
+            print("night to morning")
+
+
+
+    else:
+        print("nothing")
 
 
     backgroundImg = ''
