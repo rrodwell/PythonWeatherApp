@@ -28,6 +28,13 @@ def index(request):
     highTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['high']
     descriptionTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['text']
 
+    sunrise = json_data['query']['results']['channel']['astronomy']['sunrise']
+    sunset = json_data['query']['results']['channel']['astronomy']['sunset']
+
+    new_sunrise = sunrise.replace("am", "")
+    new_sunset = sunset.replace("pm", "")
+
+
    # print(forecastTomorrow)
     print(descriptionToday)
 
@@ -76,6 +83,7 @@ def index(request):
             backgroundList.setdefault('Sunny', []).append('rainy2.gif')
             backgroundList.setdefault('Mostly Sunny', []).append('rain2.gif')
             backgroundList.setdefault('Mostly Sunny', []).append('rainy2.gif')
+            backgroundList.setdefault('Mostly Sunny', []).append('rainy.gif')
 
     elif now > night_begin and now < morning_begin:
         if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny':

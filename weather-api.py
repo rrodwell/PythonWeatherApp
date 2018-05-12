@@ -26,8 +26,9 @@ def getWeather():
     sunrise = json_data['query']['results']['channel']['astronomy']['sunrise']
     sunset = json_data['query']['results']['channel']['astronomy']['sunset']
 
-    print(sunrise)
-    print(sunset)
+    #new_sunrise = sunrise.replace("am", "")
+    #new_sunset = sunset.replace("pm", "")
+
     descriptionToday = json_data['query']['results']['channel']['item']['condition']['text']
 
 
@@ -36,6 +37,37 @@ def getWeather():
 
     global highTomorrow
     highTomorrow = int (json_data['query']['results']['channel']['item']['forecast'][1]['high'])
+
+    global high_Sunday
+    high_Sunday = int(json_data['query']['results']['channel']['item']['forecast'][1]['high'])
+
+
+    global high_Monday
+    high_Monday = int(json_data['query']['results']['channel']['item']['forecast'][3]['high'])
+
+    global high_Tuesday
+    high_Tuesday = int(json_data['query']['results']['channel']['item']['forecast'][4]['high'])
+
+    global high_Wednesday
+    high_Wednesday = int(json_data['query']['results']['channel']['item']['forecast'][5]['high'])
+
+    global high_Thursday
+    high_Thursday = int(json_data['query']['results']['channel']['item']['forecast'][6]['high'])
+
+    global high_Friday
+    high_Friday = int(json_data['query']['results']['channel']['item']['forecast'][7]['high'])
+
+
+    print("The high today is " + str(highToday))
+    print("The high tomorrow is " + str(highTomorrow))
+    print("The high on Sunday is " + str(high_Sunday))
+    print("The high on Monday is " + str(high_Monday))
+    print("The high on Tuesday is " + str(high_Tuesday))
+    print("The high on Wednesday is " + str(high_Wednesday))
+    print("The high on Thursday is " + str(high_Thursday))
+    print("The high on Friday is " + str(high_Friday))
+
+
 
     descriptionTomorrow = json_data['query']['results']['channel']['item']['forecast'][1]['text']
 
@@ -115,6 +147,7 @@ def getWeather():
 
     else:
         print("nothing")
+
 
 
     # print statement

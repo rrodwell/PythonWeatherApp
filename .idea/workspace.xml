@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a64b090a-c023-4ba8-9e1c-34f24eaae15e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/clearevening.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/clearnight.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/eveningcloud.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/eveningrain.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/eveningrain2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/lightningbolt.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/morningrain.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/nightclear.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/nightclear2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/nightrain.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/rainy.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/rainy2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/rainyday.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/sunnymorning.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherApp/static/img/thunderstorms.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherApp/WeatherApi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp/WeatherApi/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApp/WeatherApp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp/WeatherApp/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherApp/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather-api.py" beforeDir="false" afterPath="$PROJECT_DIR$/weather-api.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +17,8 @@
       <file leaf-file-name="weather-api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weather-api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="92" column="51" selection-start-line="92" selection-start-column="51" selection-end-line="92" selection-end-column="51" />
+            <state relative-caret-position="110">
+              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -58,8 +40,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WeatherApp/WeatherApi/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+            <state relative-caret-position="259">
+              <caret line="85" column="71" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="71" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -103,13 +85,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/WeatherApp/static/css/style.css" />
-        <option value="$PROJECT_DIR$/weather-api.py" />
         <option value="$PROJECT_DIR$/WeatherApp/WeatherApp/settings.py" />
+        <option value="$PROJECT_DIR$/weather-api.py" />
         <option value="$PROJECT_DIR$/WeatherApp/WeatherApi/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="709" />
@@ -608,16 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weather-api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="92" column="51" selection-start-line="92" selection-start-column="51" selection-end-line="92" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WeatherApp/WeatherApp/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1740">
@@ -632,10 +604,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WeatherApp/templates/WeatherApi/weather-icons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weather-api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/WeatherApp/WeatherApi/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="37" column="50" selection-start-line="37" selection-start-column="50" selection-end-line="37" selection-end-column="50" />
+        <state relative-caret-position="259">
+          <caret line="85" column="71" selection-start-line="85" selection-start-column="71" selection-end-line="85" selection-end-column="71" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
