@@ -16,13 +16,14 @@
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="../../static/css/weather-icons.css">
 
 </head>
 
 <body>
     <div class='container'>
         <div class='row'>
-            <div class='col s12 m6 offset-m3'>
+            <div class='col s11 m6 offset-m3 weather-col'>
                 <div class='card' style='background-image: url(../static/img/{{background}})'>
                     <div class='layer'></div>
                     <div class='card-content'>
@@ -35,6 +36,8 @@
                                 <a class='celsius'>˚C</a> / <a class='fahrenheit'>˚F</a>
                             </span>
                         </div>
+                        <span class="card-title">Hello, World!</span>
+                        <p>{{ forecast }}</p>
 
                         <div class='row'>
                             <div class='col s8'>
@@ -46,8 +49,122 @@
                                 <p class='degrees'>˚</p>
                             </div>
                         </div>
-                        <span class="card-title">Hello, World!</span>
-                        <p>{{ forecast }}</p>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col s1 weather-col">
+                <div class='card'>
+                    <div class="card-content">
+                        <div class='forecast-container'>
+                            <div class="row">
+                                <div class="forecast">
+                                    <p>Sun</p>
+                                    <div class="icon sun-shower">
+                                        <div class="cloud"></div>
+                                        <div class="sun">
+                                            <div class="rays"></div>
+                                        </div>
+                                        <div class="rain"></div>
+                                    </div>
+                                    <ul class="highlow">
+                                        <li>95</li>
+                                        <li>|</li>
+                                        <li>67</li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="forecast">
+                                    <p>Mon</p>
+                                    <div class="icon sun-shower">
+                                        <div class="cloud"></div>
+                                        <div class="sun">
+                                            <div class="rays"></div>
+                                        </div>
+                                    </div>
+                                    <ul class="highlow">
+                                        <li>95</li>
+                                        <li>|</li>
+                                        <li>67</li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="forecast">
+                                    <p>Tues</p>
+                                    <div class="icon thunder-storm">
+                                        <div class="cloud"></div>
+                                        <div class="lightning">
+                                            <div class="bolt"></div>
+                                            <div class="bolt"></div>
+                                        </div>
+                                    </div>
+                                    <ul class="highlow">
+                                        <li>95</li>
+                                        <li>|</li>
+                                        <li>67</li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="forecast">
+                                    <p>Wed</p>
+                                    <div class="icon cloudy">
+                                        <div class="cloud"></div>
+                                        <div class="cloud"></div>
+                                    </div>
+                                    <ul class="highlow">
+                                        <li>95</li>
+                                        <li>|</li>
+                                        <li>67</li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="forecast">
+                                    <p>Thurs</p>
+                                    <div class="icon flurries">
+                                        <div class="cloud"></div>
+                                        <div class="snow">
+                                            <div class="flake"></div>
+                                            <div class="flake"></div>
+                                        </div>
+                                    </div>
+                                    <ul class="highlow">
+                                        <li>95</li>
+                                        <li>|</li>
+                                        <li>67</li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="forecast">
+                                    <p>Fri</p>
+                                    <div class="icon sunny">
+                                        <div class="sun">
+                                            <div class="rays"></div>
+                                        </div>
+                                    </div>
+                                    <ul class="highlow">
+                                        <li>95</li>
+                                        <li>|</li>
+                                        <li>67</li>
+                                    </ul>
+                                </div>
+                                <hr>
+                                <div class="forecast">
+                                    <p>Sun</p>
+                                    <div class="icon rainy">
+                                        <div class="cloud"></div>
+                                        <div class="rain"></div>
+                                    </div>
+                                    <ul class="highlow">
+                                        <li>95</li>
+                                        <li>|</li>
+                                        <li>67</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

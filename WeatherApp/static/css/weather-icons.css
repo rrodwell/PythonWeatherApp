@@ -1,39 +1,38 @@
-html {
-    box-sizing: border-box;
+.weather-col .card-content {
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
-html *,
-html *:before,
-html *:after {
-    box-sizing: inherit;
-}
-
-body {
-    max-width: 42em;
-    padding: 2em;
-    margin: 0 auto;
-    color: #161616;
-    font-family: 'Roboto', sans-serif;
+.forecast p{
+    color: #888;
     text-align: center;
+    font-size: 12px;
+}
+.forecast-container {
+    color:rgba(255,255,255, 1);
     background-color: currentColor;
 }
 
-h1 {
+.forecast-container h1 {
     margin-bottom: 1.375em;
     color: #fff;
     font-weight: 100;
     font-size: 2em;
     text-transform: uppercase;
 }
-
-p,
-a {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: small;
+ul.highlow {
+    margin: 0;
+    text-align: center;
 }
 
-p {
-    margin: 1.375rem 0;
+ul.highlow li {
+    color: #888;
+    font-size: 8pt;
+    display: inline-block;
+}
+
+ul.highlow li:last-child{
+    color: #bbb
 }
 
 .icon {
@@ -41,7 +40,7 @@ p {
     display: inline-block;
     width: 12em;
     height: 10em;
-    font-size: 1em;
+    font-size: 4px;
     /* control icon size here */
 }
 
@@ -55,7 +54,7 @@ p {
     margin: -1.84375em;
     background: currentColor;
     border-radius: 50%;
-    box-shadow: -2.1875em 0.6875em 0 -0.6875em, 2.0625em 0.9375em 0 -0.9375em, 0 0 0 0.375em #fff, -2.1875em 0.6875em 0 -0.3125em #fff, 2.0625em 0.9375em 0 -0.5625em #fff;
+    box-shadow: -2.1875em 0.6875em 0 -0.6875em, 2.0625em 0.9375em 0 -0.9375em, 0 0 0 0.375em #888, -2.1875em 0.6875em 0 -0.3125em #888, 2.0625em 0.9375em 0 -0.5625em #888;
 }
 
 .cloud:after {
@@ -67,20 +66,20 @@ p {
     width: 4.5625em;
     height: 1em;
     background: currentColor;
-    box-shadow: 0 0.4375em 0 -0.0625em #fff;
+    box-shadow: 0 0.4375em 0 -0.0625em #888;
 }
 
 .cloud:nth-child(2) {
     z-index: 0;
-    background: #fff;
-    box-shadow: -2.1875em 0.6875em 0 -0.6875em #fff, 2.0625em 0.9375em 0 -0.9375em #fff, 0 0 0 0.375em #fff, -2.1875em 0.6875em 0 -0.3125em #fff, 2.0625em 0.9375em 0 -0.5625em #fff;
+    background: #888;
+    box-shadow: -2.1875em 0.6875em 0 -0.6875em #888, 2.0625em 0.9375em 0 -0.9375em #888, 0 0 0 0.375em #888, -2.1875em 0.6875em 0 -0.3125em #888, 2.0625em 0.9375em 0 -0.5625em #888;
     opacity: 0.3;
     transform: scale(0.5) translate(6em, -3em);
     animation: cloud 4s linear infinite;
 }
 
 .cloud:nth-child(2):after {
-    background: #fff;
+    background: #888;
 }
 
 .sun {
@@ -228,7 +227,7 @@ p {
     top: 50%;
     left: 50%;
     margin: -1.025em 0 0 -1.0125em;
-    color: #fff;
+    color: #bbb;
     list-height: 1em;
     opacity: 0.2;
     animation: spin 8s linear infinite reverse;
