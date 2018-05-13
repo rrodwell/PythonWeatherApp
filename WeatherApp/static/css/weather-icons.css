@@ -3,10 +3,9 @@
     padding-bottom: 5px;
 }
 
-/* .forecast {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #888;
-} */
+.forecast-card {
+    background-color: #f5f5f5;
+}
 
 .forecast p{
     color: #888;
@@ -14,7 +13,7 @@
     font-size: 12px;
 }
 .forecast-container {
-    color:rgba(255,255,255, 1);
+    color:#f5f5f5;
     background-color: currentColor;
 }
 
