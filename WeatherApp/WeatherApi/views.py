@@ -164,8 +164,8 @@ def index(request):
     sunny_desc = ['Sunny','Clear','Partly Sunny']
     mostly_sunny_desc = ['Mostly Sunny','Partly Cloudy',]
     cloudy_desc = ['Cloudy','Mostly Cloudy','Partly Cloudy','Breezy']
-    rainy_desc = ['Rain','Scattered Showers']
-    heavy_rain_desc = ['Heavy Rain','Thunderstorms', 'Scattered Thunderstorms']
+    rainy_desc = ['Rain','Scattered Showers','Heavy Rain']
+    storm_desc = ['Thunderstorms', 'Scattered Thunderstorms']
     snow_desc = []
 
 
@@ -178,7 +178,7 @@ def index(request):
         'mostly_sunny_desc': mostly_sunny_desc,
         'cloudy_desc': cloudy_desc,
         'rainy_desc': rainy_desc,
-        'heavy_rain_desc': heavy_rain_desc,
+        'storm_desc': storm_desc,
         'snow_desc': snow_desc
     }
 
