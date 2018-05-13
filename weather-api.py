@@ -35,37 +35,81 @@ def getWeather():
     global highToday
     highToday = int(json_data['query']['results']['channel']['item']['forecast'][0]['high'])
 
+    global lowToday
+    lowToday = int(json_data['query']['results']['channel']['item']['forecast'][0]['low'])
+
     global highTomorrow
-    highTomorrow = int (json_data['query']['results']['channel']['item']['forecast'][1]['high'])
+    lowTomorrow = int (json_data['query']['results']['channel']['item']['forecast'][1]['high'])
+
+    global lowTomorrow
+    highTomorrow = int (json_data['query']['results']['channel']['item']['forecast'][1]['low'])
 
     global high_Sunday
     high_Sunday = int(json_data['query']['results']['channel']['item']['forecast'][1]['high'])
 
+    global low_Sunday
+    low_Sunday = int(json_data['query']['results']['channel']['item']['forecast'][1]['low'])
+
 
     global high_Monday
-    high_Monday = int(json_data['query']['results']['channel']['item']['forecast'][3]['high'])
+    high_Monday = int(json_data['query']['results']['channel']['item']['forecast'][2]['high'])
+
+    global low_Monday
+    low_Monday = int(json_data['query']['results']['channel']['item']['forecast'][3]['low'])
 
     global high_Tuesday
     high_Tuesday = int(json_data['query']['results']['channel']['item']['forecast'][4]['high'])
 
+    global low_Tuesday
+    low_Tuesday = int(json_data['query']['results']['channel']['item']['forecast'][4]['low'])
+
     global high_Wednesday
     high_Wednesday = int(json_data['query']['results']['channel']['item']['forecast'][5]['high'])
+
+    global low_Wednesday
+    low_Wednesday = int(json_data['query']['results']['channel']['item']['forecast'][5]['low'])
 
     global high_Thursday
     high_Thursday = int(json_data['query']['results']['channel']['item']['forecast'][6]['high'])
 
+    global low_Thursday
+    low_Thursday = int(json_data['query']['results']['channel']['item']['forecast'][6]['low'])
+
     global high_Friday
     high_Friday = int(json_data['query']['results']['channel']['item']['forecast'][7]['high'])
 
+    global low_Friday
+    low_Friday = int(json_data['query']['results']['channel']['item']['forecast'][7]['low'])
+
 
     print("The high today is " + str(highToday))
-    print("The high tomorrow is " + str(highTomorrow))
+    print("The low today is " + str(lowToday))
+
+
+
     print("The high on Sunday is " + str(high_Sunday))
+    print("The low on Sunday is " + str(low_Sunday))
+
+
+
     print("The high on Monday is " + str(high_Monday))
+    print("The low on Monday is " + str(low_Monday))
+
     print("The high on Tuesday is " + str(high_Tuesday))
+    print("The low on Tuesday is " + str(low_Tuesday))
+
+
     print("The high on Wednesday is " + str(high_Wednesday))
+    print("The low on Wednesday is " + str(low_Wednesday))
+
+
     print("The high on Thursday is " + str(high_Thursday))
+    print("The low on Thursday is " + str(low_Thursday))
+
+
     print("The high on Friday is " + str(high_Friday))
+    print("The low on Friday is " + str(low_Friday))
+
 
 
 
