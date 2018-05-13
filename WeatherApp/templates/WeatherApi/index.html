@@ -61,39 +61,36 @@
                     <div class="card-content">
                         <div class='forecast-container'>
                             <div class="row">
+                                <!-- {% csrf_token %}
+                                {% block content %}
+                                {% endblock %} -->
+                                {% for cast in weekly_forecast %}
                                 <div class="forecast">
-                                    <p>Sun</p>
+                                    <p>{{ cast.day }}</p>
+                                    {% if cast.text in sunny_desc %}
+                                    <div class="icon sunny">
+                                        <div class="sun">
+                                            <div class="rays"></div>
+                                        </div>
+                                    </div>
+                                    {% elif cast.text in mostly_sunny_desc %}
                                     <div class="icon sun-shower">
                                         <div class="cloud"></div>
                                         <div class="sun">
                                             <div class="rays"></div>
                                         </div>
+                                    </div>
+                                    {% elif cast.text in cloudy_desc %}
+                                    <div class="icon cloudy">
+                                        <div class="cloud"></div>
+                                        <div class="cloud"></div>
+                                    </div>
+                                    {% elif cast.text in rainy_desc %}
+                                    <div class="icon rainy">
+                                        <div class="cloud"></div>
                                         <div class="rain"></div>
                                     </div>
-                                    <ul class="highlow">
-                                        <li>95</li>
-                                        <li>|</li>
-                                        <li>67</li>
-                                    </ul>
-                                </div>
-                                <hr>
-                                <div class="forecast">
-                                    <p>Mon</p>
-                                    <div class="icon sun-shower">
-                                        <div class="cloud"></div>
-                                        <div class="sun">
-                                            <div class="rays"></div>
-                                        </div>
-                                    </div>
-                                    <ul class="highlow">
-                                        <li>95</li>
-                                        <li>|</li>
-                                        <li>67</li>
-                                    </ul>
-                                </div>
-                                <hr>
-                                <div class="forecast">
-                                    <p>Tues</p>
+                                    {% elif cast.text in heavy_rain_desc %}
                                     <div class="icon thunder-storm">
                                         <div class="cloud"></div>
                                         <div class="lightning">
@@ -101,28 +98,7 @@
                                             <div class="bolt"></div>
                                         </div>
                                     </div>
-                                    <ul class="highlow">
-                                        <li>95</li>
-                                        <li>|</li>
-                                        <li>67</li>
-                                    </ul>
-                                </div>
-                                <hr>
-                                <div class="forecast">
-                                    <p>Wed</p>
-                                    <div class="icon cloudy">
-                                        <div class="cloud"></div>
-                                        <div class="cloud"></div>
-                                    </div>
-                                    <ul class="highlow">
-                                        <li>95</li>
-                                        <li>|</li>
-                                        <li>67</li>
-                                    </ul>
-                                </div>
-                                <hr>
-                                <div class="forecast">
-                                    <p>Thurs</p>
+                                    {% elif cast.text in snow_desc %}
                                     <div class="icon flurries">
                                         <div class="cloud"></div>
                                         <div class="snow">
@@ -130,39 +106,23 @@
                                             <div class="flake"></div>
                                         </div>
                                     </div>
-                                    <ul class="highlow">
-                                        <li>95</li>
-                                        <li>|</li>
-                                        <li>67</li>
-                                    </ul>
-                                </div>
-                                <hr>
-                                <div class="forecast">
-                                    <p>Fri</p>
-                                    <div class="icon sunny">
+                                    {% else %}
+                                    <div class="icon sun-shower">
+                                        <div class="cloud"></div>
                                         <div class="sun">
                                             <div class="rays"></div>
                                         </div>
+                                        <div class="rain"></div>
                                     </div>
+                                    {% endif %}
                                     <ul class="highlow">
-                                        <li>95</li>
+                                        <li>{{ cast.high  }}</li>
                                         <li>|</li>
-                                        <li>67</li>
+                                        <li>{{ cast.low }}</li>
                                     </ul>
                                 </div>
                                 <hr>
-                                <div class="forecast">
-                                    <p>Sun</p>
-                                    <div class="icon rainy">
-                                        <div class="cloud"></div>
-                                        <div class="rain"></div>
-                                    </div>
-                                    <ul class="highlow">
-                                        <li>95</li>
-                                        <li>|</li>
-                                        <li>67</li>
-                                    </ul>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

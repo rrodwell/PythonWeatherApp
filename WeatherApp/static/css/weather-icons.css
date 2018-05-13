@@ -3,6 +3,11 @@
     padding-bottom: 5px;
 }
 
+/* .forecast {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #888;
+} */
+
 .forecast p{
     color: #888;
     text-align: center;
@@ -299,8 +304,8 @@ ul.highlow li:last-child{
         opacity: 0.2;
     }
     50% {
-        color: rgb(255, 238, 0);
-        background: rgb(255, 238, 0);
+        color: rgb(255, 217, 0);
+        background: rgb(255, 217, 0);
         opacity: 1;
     }
     55% {

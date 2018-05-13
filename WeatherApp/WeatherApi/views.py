@@ -20,6 +20,7 @@ def index(request):
     # JSON
 
     json_data = requests.get(api_address).json()
+    #print("JSON:",json_data)
 
     temperatureNow = json_data['query']['results']['channel']['item']['condition']['temp']
     descriptionToday = json_data['query']['results']['channel']['item']['condition']['text']
@@ -35,6 +36,50 @@ def index(request):
     new_sunset = sunset.replace("pm", "")
 
 
+    weekly_forecast = [
+        {
+            "day": json_data['query']['results']['channel']['item']['forecast'][1]['day'],
+            "high": int(json_data['query']['results']['channel']['item']['forecast'][1]['high']),
+            "low": int(json_data['query']['results']['channel']['item']['forecast'][1]['low']),
+            "text": json_data['query']['results']['channel']['item']['forecast'][1]['text'],
+        },
+        {
+            "day": json_data['query']['results']['channel']['item']['forecast'][2]['day'],
+            "high": int(json_data['query']['results']['channel']['item']['forecast'][2]['high']),
+            "low": int(json_data['query']['results']['channel']['item']['forecast'][2]['low']),
+            "text": json_data['query']['results']['channel']['item']['forecast'][2]['text'],
+        },
+        {
+            "day": json_data['query']['results']['channel']['item']['forecast'][3]['day'],
+            "high": int(json_data['query']['results']['channel']['item']['forecast'][3]['high']),
+            "low": int(json_data['query']['results']['channel']['item']['forecast'][3]['low']),
+            "text": json_data['query']['results']['channel']['item']['forecast'][3]['text'],
+        },
+        {
+            "day": json_data['query']['results']['channel']['item']['forecast'][4]['day'],
+            "high": int(json_data['query']['results']['channel']['item']['forecast'][4]['high']),
+            "low": int(json_data['query']['results']['channel']['item']['forecast'][4]['low']),
+            "text": json_data['query']['results']['channel']['item']['forecast'][4]['text'],
+        },
+        {
+            "day": json_data['query']['results']['channel']['item']['forecast'][5]['day'],
+            "high": int(json_data['query']['results']['channel']['item']['forecast'][5]['high']),
+            "low": int(json_data['query']['results']['channel']['item']['forecast'][5]['low']),
+            "text": json_data['query']['results']['channel']['item']['forecast'][5]['text'],
+        },
+        {
+            "day": json_data['query']['results']['channel']['item']['forecast'][6]['day'],
+            "high": int(json_data['query']['results']['channel']['item']['forecast'][6]['high']),
+            "low": int(json_data['query']['results']['channel']['item']['forecast'][6]['low']),
+            "text": json_data['query']['results']['channel']['item']['forecast'][6]['text'],
+        },
+        {
+            "day": json_data['query']['results']['channel']['item']['forecast'][7]['day'],
+            "high": int(json_data['query']['results']['channel']['item']['forecast'][7]['high']),
+            "low": int(json_data['query']['results']['channel']['item']['forecast'][7]['low']),
+            "text": json_data['query']['results']['channel']['item']['forecast'][7]['text'],
+        }
+    ]
    # print(forecastTomorrow)
     print(descriptionToday)
 
@@ -116,10 +161,25 @@ def index(request):
     weatherUpdate = 'The temperature is ' + temperatureNow + ' degrees F and ' + descriptionToday + ' in Atlanta.' + '\n The high today is ' + highToday + '. \n Tomorrow : ' + highTomorrow + " and " + descriptionTomorrow
 
 
+    sunny_desc = ['Sunny','Clear','Partly Sunny']
+    mostly_sunny_desc = ['Mostly Sunny','Partly Cloudy',]
+    cloudy_desc = ['Cloudy','Mostly Cloudy','Partly Cloudy','Breezy']
+    rainy_desc = ['Rain','Scattered Showers']
+    heavy_rain_desc = ['Heavy Rain','Thunderstorms', 'Scattered Thunderstorms']
+    snow_desc = []
+
+
     weatherForecast = {
         'forecast': weatherUpdate,
         'temperature': temperatureNow,
         'background': backgroundImg,
+        'weekly_forecast': weekly_forecast,
+        'sunny_desc': sunny_desc,
+        'mostly_sunny_desc': mostly_sunny_desc,
+        'cloudy_desc': cloudy_desc,
+        'rainy_desc': rainy_desc,
+        'heavy_rain_desc': heavy_rain_desc,
+        'snow_desc': snow_desc
     }
 
     print(weatherForecast)
