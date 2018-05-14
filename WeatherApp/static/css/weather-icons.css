@@ -24,6 +24,16 @@
     font-size: 2em;
     text-transform: uppercase;
 }
+
+.forecast-container .row .forecast {
+    margin: 10px auto;
+    border-bottom: 1px solid #888
+}
+
+.forecast-container .row .forecast:last-child {
+    border-bottom: none;
+}
+
 ul.highlow {
     margin: 0;
     text-align: center;
