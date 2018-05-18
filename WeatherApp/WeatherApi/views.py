@@ -95,7 +95,7 @@ def index(request):
 
     if now > morning_begin and now < evening_begin:
 
-        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or'Sunny' or ' Mostly Sunny':
+        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or'Sunny' or ' Mostly Sunny' or 'Thunderstorms':
             backgroundList.setdefault('Partly Cloudy', []).append('clearsky.jpg')
             backgroundList.setdefault('Partly Cloudy', []).append('CRg.gif')
             backgroundList.setdefault('Partly Cloudy', []).append('sunnymorning.gif')
@@ -122,7 +122,7 @@ def index(request):
 
 
     elif now > evening_begin and now < night_begin:
-        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny' or 'Most Sunny':
+        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny' or 'Most Sunny' or 'Thunderstorms':
             backgroundList.setdefault('Sunny', []).append('rainy.gif')
             backgroundList.setdefault('Sunny', []).append('rain2.gif')
             backgroundList.setdefault('Sunny', []).append('rainy2.gif')
@@ -148,6 +148,7 @@ def index(request):
         print("nothing")
 
 
+    print ("BackgroundList:",backgroundList)
     backgroundImg = ''
 
 

@@ -33,9 +33,10 @@
                         </div>
                         <div class='metrics'>
                             <span>
-                                <a class='celsius'>˚C</a> / <a class='fahrenheit'>˚F</a>
+                                <a class='celsius'>˚C</a> /
+                                <a class='fahrenheit'>˚F</a>
                             </span>
-                        </div>
+                        </div>  
                         <span class="card-title">Hello, World!</span>
                         <p>{{ forecast }}</p>
 
@@ -116,9 +117,9 @@
                                     </div>
                                     {% endif %}
                                     <ul class="highlow">
-                                        <li>{{ cast.high  }}</li>
+                                        <li class='high'>{{ cast.high  }}</li>
                                         <li>|</li>
-                                        <li>{{ cast.low }}</li>
+                                        <li class='low'>{{ cast.low }}</li>
                                     </ul>
                                 </div>
                                 {% endfor %}
