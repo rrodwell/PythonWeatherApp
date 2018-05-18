@@ -1,3 +1,8 @@
+.weather-col {
+    width: 9%;
+    height: 100%;
+}
+
 .weather-col .card-content {
     padding-top: 10px;
     padding-bottom: 5px;
@@ -26,7 +31,7 @@
 }
 
 .forecast-container .row .forecast {
-    margin: 10px auto;
+    padding: 6px 0;
     border-bottom: 1px solid #888
 }
 
@@ -54,7 +59,7 @@ ul.highlow li:last-child{
     display: inline-block;
     width: 12em;
     height: 10em;
-    font-size: 4px;
+    font-size: 5px;
     /* control icon size here */
 }
 
