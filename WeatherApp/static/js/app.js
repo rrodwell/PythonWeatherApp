@@ -27,5 +27,30 @@ $(document).ready(function() {
         });
     });
 
+    $('.fahrenheit').on('click', function () {
+        console.log("clicked")
+        var currentTemp = $('.temp').text().trim();
+        currentTemp = (currentTemp * (9/5)) + 32;
+        currentTemp = Math.round(currentTemp)
+        $('.temp').html("")
+        $('.temp').append(currentTemp)
+
+        $('.high').each(function () {
+            var forecastHigh = $(this).text();
+            forecastHigh = (forecastHigh * (9 / 5)) + 32;
+            forecastHigh = Math.round(forecastHigh)
+            $(this).html("")
+            $(this).append(forecastHigh)
+        });
+
+        $('.low').each(function () {
+            var forecastLow = $(this).text();
+            forecastLow = (forecastLow * (9 / 5)) + 32;
+            forecastLow = Math.round(forecastLow)
+            $(this).html("")
+            $(this).append(forecastLow)
+
+        });
+    });
 
 })
