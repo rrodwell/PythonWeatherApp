@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a64b090a-c023-4ba8-9e1c-34f24eaae15e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApp/WeatherApi/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp/WeatherApi/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApp/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApp/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherApp/templates/WeatherApi/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherApp/templates/WeatherApi/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WeatherApp/WeatherApi/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="126" column="77" selection-start-line="126" selection-start-column="77" selection-end-line="126" selection-end-column="77" />
+            <state relative-caret-position="221">
+              <caret line="130" selection-start-line="130" selection-end-line="130" />
             </state>
           </provider>
         </entry>
@@ -69,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeatherApp/templates/WeatherApi/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
-              <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+              <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -92,9 +96,9 @@
         <option value="$PROJECT_DIR$/WeatherApp/WeatherApp/settings.py" />
         <option value="$PROJECT_DIR$/weather-api.py" />
         <option value="$PROJECT_DIR$/WeatherApp/static/css/weather-icons.css" />
-        <option value="$PROJECT_DIR$/WeatherApp/WeatherApi/views.py" />
         <option value="$PROJECT_DIR$/WeatherApp/static/css/style.css" />
         <option value="$PROJECT_DIR$/WeatherApp/templates/WeatherApi/index.html" />
+        <option value="$PROJECT_DIR$/WeatherApp/WeatherApi/views.py" />
       </list>
     </option>
   </component>
@@ -650,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeatherApp/WeatherApi/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="126" column="77" selection-start-line="126" selection-start-column="77" selection-end-line="126" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WeatherApp/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -667,10 +664,17 @@
     <entry file="file://$PROJECT_DIR$/WeatherApp/templates/WeatherApi/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+          <caret line="48" column="34" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeatherApp/WeatherApi/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="130" selection-start-line="130" selection-end-line="130" />
         </state>
       </provider>
     </entry>
