@@ -125,13 +125,9 @@ def index(request):
 
 
 
-<<<<<<< HEAD
     elif now >= evening_begin and now < night_begin:
         if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny' or 'Most Sunny':
-=======
-    elif now > evening_begin and now < night_begin:
-        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny' or 'Most Sunny' or 'Thunderstorms':
->>>>>>> e7cd34cce4ba5c8bf3d71a643a76de6cebcc23c7
+
             backgroundList.setdefault('Sunny', []).append('rainy.gif')
             backgroundList.setdefault('Sunny', []).append('rain2.gif')
             backgroundList.setdefault('Sunny', []).append('rainy2.gif')
