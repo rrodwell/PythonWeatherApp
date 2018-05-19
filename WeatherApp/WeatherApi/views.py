@@ -121,13 +121,20 @@ def index(request):
             backgroundList.setdefault('Mostly Sunny', []).append('sunnymorning.gif')
             backgroundList.setdefault('Mostly Sunny', []).append('natureback.jpg')
 
-
     elif now >= evening_begin and now < night_begin:
         if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny' or 'Most Sunny':
             backgroundList.setdefault('Sunny', []).append('clearevening.gif')
 
     elif now > evening_begin and now < night_begin:
         if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny' or 'Most Sunny' or 'Thunderstorms':
+            backgroundList.setdefault('Sunny', []).append('clearevening.gif')
+
+
+
+
+    elif now >= evening_begin and now < night_begin:
+        if descriptionToday == 'Partly Cloudy' or 'Cloudy' or 'Mostly Cloudy' or 'Sunny' or 'Most Sunny':
+
             backgroundList.setdefault('Sunny', []).append('rainy.gif')
             backgroundList.setdefault('Sunny', []).append('rain2.gif')
             backgroundList.setdefault('Sunny', []).append('rainy2.gif')

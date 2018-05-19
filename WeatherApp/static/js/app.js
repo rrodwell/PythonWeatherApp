@@ -3,6 +3,8 @@ $(document).ready(function() {
 
     $('.celsius').on('click', function(){
         console.log("clicked")
+        $('.fahrenheit').removeClass('disabled')
+        $('.celsius').addClass('disabled')
         var currentTemp = $('.temp').text().trim();
         currentTemp = (currentTemp - 32) * (5 / 9);
         currentTemp = Math.round(currentTemp)
@@ -29,6 +31,8 @@ $(document).ready(function() {
 
     $('.fahrenheit').on('click', function () {
         console.log("clicked")
+        $('.fahrenheit').addClass('disabled')
+        $('.celsius').removeClass('disabled')
         var currentTemp = $('.temp').text().trim();
         currentTemp = (currentTemp * (9/5)) + 32;
         currentTemp = Math.round(currentTemp)

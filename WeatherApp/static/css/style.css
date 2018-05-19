@@ -65,9 +65,17 @@
     /* border: 0; */
     margin-bottom: 10px;
     text-align: right;
-    color: white;
 }
 
-.metrics a {
+.metrics .btn, .metrics.btn.disabled {
+    margin: 0;
     color: white;
+    background-color: transparent !important;
+   -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
 }
+
+.metrics .celsius {
+    border-right: 2px solid #ffff;
+} 
