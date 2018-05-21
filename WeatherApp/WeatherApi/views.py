@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import LocationSearchForm
 from datetime import datetime
 from threading import Timer
 import requests
@@ -13,9 +14,12 @@ from django.utils import timezone
 
 
 # Create your views here.
-def index(request):
+def index(request, location):
 
-    api_address = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Atlanta%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
+    if location == '':
+        location = 'Atlanta'
+    
+    api_address = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22'+ location +'%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'
 
     # JSON
 
@@ -212,3 +216,14 @@ def index(request):
     print(weatherForecast)
 
     return render(request,'WeatherApi/index.html',context=weatherForecast)
+
+
+def search_location(request):
+    if request.method == 'POST':
+        form = LocationSearchForm(request.POST)
+        if form.is_Valid(): 
+            return index(request,HttpResponse(''))
+    else:
+        form = LocationSearchForm()
+
+    return render(request, 'form.html', {'form': form})

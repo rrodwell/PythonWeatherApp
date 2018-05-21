@@ -28,8 +28,15 @@
                     <div class='layer'></div>
                     <div class='card-content'>
                         <div class="search-wrapper">
-                            <input id="search" placeholder="Enter City"><i class="material-icons">search</i>
-                            <div class="search-results"></div>
+                            <form action='/' method='POST'>
+                                {% csrf_token %}
+                                {{ form }}
+                                <input id="search" placeholder="Enter City" type='submit'><i class="material-icons">search</i>
+                                <div class="search-results"></div>
+                            </form>
+                            <!-- {% csrf_token %}
+                            {% block content %}
+                            {% endblock %} -->
                         </div>
                         <div class='metrics'>
                             <a class='celsius btn'>˚C</a>

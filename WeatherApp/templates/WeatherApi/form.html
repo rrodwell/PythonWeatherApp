@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<form action='/' method='POST'>
+    {% csrf_token %} {{ form }}
+    <input id="search" placeholder="Enter City" type='submit'>
+    <i class="material-icons">search</i>
+    <div class="search-results"></div>
+</form>
+{% endblock %}
