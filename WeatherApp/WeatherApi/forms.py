@@ -1,4 +1,4 @@
 from django import forms 
 
 class LocationSearchForm (forms.Form):
-    location = forms.CharField(maxlength=100)
+    location = forms.CharField(label='search',max_length=100)

@@ -14,7 +14,9 @@ from django.utils import timezone
 
 
 # Create your views here.
-def index(request, location):
+def index(request):
+
+    search_location(request)
 
     if location == '':
         location = 'Atlanta'
@@ -222,7 +224,8 @@ def search_location(request):
     if request.method == 'POST':
         form = LocationSearchForm(request.POST)
         if form.is_Valid(): 
-            return index(request,HttpResponse(''))
+            location = HttpResponse('')
+            return location
     else:
         form = LocationSearchForm()
 
