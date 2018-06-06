@@ -18,7 +18,7 @@ def index(request):
 
     # search_location(request)
     location = ''
-    
+
     if location == '':
         location = 'Atlanta'
     
@@ -225,8 +225,9 @@ def search_location(request):
     if request.method == 'POST':
         form = LocationSearchForm(request.POST)
         if form.is_Valid(): 
-            location = HttpResponse('')
-            return location
+            # location = HttpResponse('')
+            # return location
+            return HttpResponseRedirect('/thanks/')
     else:
         form = LocationSearchForm()
 
