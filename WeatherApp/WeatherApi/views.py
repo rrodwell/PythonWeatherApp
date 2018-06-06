@@ -16,8 +16,9 @@ from django.utils import timezone
 # Create your views here.
 def index(request):
 
-    search_location(request)
-
+    # search_location(request)
+    location = ''
+    
     if location == '':
         location = 'Atlanta'
     

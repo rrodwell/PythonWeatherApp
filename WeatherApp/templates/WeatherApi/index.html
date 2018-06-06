@@ -31,7 +31,7 @@
                             <form action='/' method='POST'>
                                 {% csrf_token %}
                                 {{ form }}
-                                <input id="search" placeholder="Enter City" type='submit'><i class="material-icons">search</i>
+                                <input id="search" placeholder="Enter City" ><i class="material-icons">search</i>
                                 <div class="search-results"></div>
                             </form>
                             <!-- {% csrf_token %}
@@ -67,9 +67,7 @@
                     <div class="card-content">
                         <div class='forecast-container center'>
                             <div class="row">
-                                <!-- {% csrf_token %}
-                                {% block content %}
-                                {% endblock %} -->
+    
                                 {% for cast in weekly_forecast %}
                                 <div class="forecast">
                                     <p>{{ cast.day }}</p>
